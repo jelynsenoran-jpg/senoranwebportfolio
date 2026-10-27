@@ -1,0 +1,221 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  background-color: #ffffff;
+}
+
+
+header {
+  background-color: darkgray;
+  height: 365px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 72px;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: burlywood;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+nav a {
+  font-size: 48px;
+}
+
+
+footer {
+  background-color: aqua;
+  height: 135px;
+  margin: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 48px;
+}
+
+
+.home {
+  display: flex;
+  justify-content: space-between;
+  background-color: lightseagreen;
+  border: 2px solid white;
+  margin: 6px;
+  padding: 8px;
+  height: 250px;
+}
+
+.welcome {
+  display: flex;
+  flex: 1;
+}
+
+.welcome h1 {
+  width: 220px;
+  margin: 0;
+  padding-left: 2px;
+}
+
+.welcome p {
+  flex: 1;
+  margin: 26px 60px 0 0;
+}
+
+.announcement {
+  width: 318px;
+  background-color: lightblue;
+  border: 2px solid wheat;
+  padding: 4px;
+}
+
+.announcement h4 {
+  margin: 0;
+  text-align: center;
+}
+
+.announcement ul {
+  margin: 0;
+}
+
+
+body.registration-page {
+  background-color: aliceblue;
+}
+
+.registration {
+  display: flex;
+  width: 720px;
+  margin-left: 68px;
+  padding-bottom: 10px;
+  background-color: aquamarine;
+}
+
+.registration h2 {
+  width: 210px;
+  margin: 0;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.registration form {
+  flex: 1;
+  padding-top: 60px;
+  padding-right: 10px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"] {
+  display: block;
+  width: 208px;
+  border: none;
+  padding: 3px;
+}
+
+.field select {
+  display: block;
+  margin-top: 4px;
+  border: none;
+}
+
+.field textarea {
+  width: 100%;
+  height: 100px;
+  border: none;
+  resize: vertical;
+}
+
+.registration button {
+  display: block;
+  border: none;
+  background-color: #efefef;
+  font-size: 16px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+
+.grade-table {
+  width: 768px;
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.grade-table caption {
+  text-align: center;
+}
+
+
+.profile {
+  display: flex;
+}
+
+.profile-photo {
+  width: 70%;
+}
+
+.profile-photo img {
+  width: 100%;
+  display: block;
+}
+
+.profile-info {
+  display: flex;
+  gap: 20px;
+  padding: 4px;
+}
+
+.profile-info ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.back-portfolio-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 18px rgba(37, 99, 235, 0.4);
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-portfolio-btn:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.6);
+}

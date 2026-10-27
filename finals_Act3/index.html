@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Student Profile</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+
+<style>
+
+    body{
+        background-color: #f0f4ff;
+        font-family: Arial,sans-serif; 
+        color: #222;
+        margin: 0;
+        padding: 0;
+    }
+   .page-wrapper{
+       max-width: 750px;
+       margin: 30px auto;
+       padding: 20px;  
+   }
+   .section-block{
+      background-color: #ffffff;
+      border: 2px solid #c0cfff;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 2px 4px 10px rgba(0,0,100, 0.08);
+    }
+   .page title{
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #1a1a8c;
+      margin-bottom: 6px;
+    }
+   .page-subtitle{
+     text-align: center;
+     font-size: 2rem;
+     color: #666;
+     margin-bottom: 18px;  
+    }
+    .section-heading{
+     font-size: 1.3rem;
+     font-weight: bold;
+     color: #1a1a8c;
+     border-bottom: 6px;
+     margin-bottom: 14px;
+    }
+    .student-info-container p{
+     font-size: 1rem;
+     margin-bottom: 6px;
+     color: #333;
+    }
+    .btn-row{
+        display: flex;
+        gap: 10px;
+        margin-top: 16px;
+        flex-wrap: wrap;
+    }
+    .btn{
+        padding: 9px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: opacity 0.2s, transform 0.1s;
+    }
+
+     .btn:hover{ opacity: 0.85;}
+     .btn:active{transform: scale(0.97);}
+
+     .btn-blue {background-color: #2a5bd7; color: #fff;}
+     .btn-yellow {background-color: #e6a800; color: #fff;}
+     .btn-green {background-color: #1e8c4a; color: #fff;}
+     .btn-gray {background-color: #555; color: #fff;}
+     .btn-red {background-color: #2a5bd7; color: #fff;}
+      
+
+    #course-select{
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 2px solid#c0cfff;
+        font-size: 1rem;
+        background: #f3f9ff;
+        color: #222;
+        outline: none;
+    }
+
+    #course-select:focus{
+        border-color: #2a5bd7;
+    }
+     
+    #course-status{
+        margin-top: 10px;
+        font-size: 0.95rem;
+        color: #555;
+    }
+     
+    #registered-label{
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+    }
+
+    thead tr{
+        background-color: #2a2a50;
+        color: #fff;
+    }
+
+    thead th{
+        padding: 11px 12px;
+        text-align: center;
+        font-weight: bold;
+    }
+    tbody tr{
+        background-color: #fff;
+    }
+    tbody tr:nth-child(even){
+        background-color: #eef2ff;
+    }
+    tbody td{
+        padding: 10px 12px;
+        text-align: center;
+        border-bottom: 1px solid #d0d8ff;
+        color:#333;
+    }
+    tbody tr:hover{
+        background-color: #d8e4ff limportant;
+    }
+
+    #profile-message{
+        display: none;
+        margin-top: 14px;
+        padding: 10px 16px;
+        background-color: #2a5bd7;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        color: #1a1a8c;
+        font-weight: bold;
+    }
+    #profile-message{
+        display: none;
+        margin-top: 14px;
+        padding: 10px 16px;
+        background-color: #fff8cc;
+        border:2px solid #e6a800;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        color: #1a1a8c;
+        font-weight: bold;
+    }
+ 
+ </style>
+</head>
+<body>
+    <p style="text-align:left;font-size:16px;margin:10px 16px;"><a href="../index.html#finals">&larr; Back to Portfolio</a></p> 
+ 
+
+
+<div class="page-wrapper">
+    <h1 class="page-title" id="main title"> My Student Profile</h1>    
+
+    <p class="page-subtitle"> Welcome to my Interactive profile </p>
+
+    <h2 class="section-heading"> Student information</h2>
+       
+    <div id="student-info-container">
+
+    <p> Name: <strong> Jelyn P.Señoran</strong></p>
+
+    <p> Course: <strong id="stud-course"> BSIT</strong></p>
+
+    <p> Year Level<strong> 3rd Year </strong></p>
+</div>
+         
+
+<div class="btn-row">
+   
+    <button class="btn btn-blue" id="change-title-btn"> Change Title </button>
+    <button class="btn btn-yellow" id="hide-profile-btn"> Hide Profile </button>
+    <button class="btn btn-blue" id="Show-profile-btn"> Show Profile </button>
+    
+</div>
+
+<div id="profile-message"></div>
+</div>
+
+<div class="section-block">
+    <h2 class="section-heading">Choose Your Course</h2>
+
+    <select id="course-select">
+        <option value=""> Select Course </option>
+        <option value="BSIT"> BSIT</option>
+        <option value="BSCS">BSHM</option>
+        <option value="BSTM">BSTM</option>
+        <option value="BSTM">BSOAD</option>
+    </select>
+    
+    <p id="course-status"> No course selected </p> 
+</div>
+
+<div class="section-block">
+    <h2 class="section-heading"> Student List </h2>
+
+    <p class="registered-label"></p>
+
+    <div id="student-table-container">
+        <table id="student-table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Year Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Juan</td>
+                    <td>BSIT</td>
+                    <td>3rd Year</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Maria</td>
+                    <td>BSOAD</td>
+                    <td>3rd Year</td>
+                   
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Pedro</td>
+                    <td>BSTM</td>
+                    <td>2nd Year</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Ana</td>
+                    <td>BSIT</td>
+                    <td>3rd Year</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="btn-row">
+        <button class="btn btn-blue" id="apply-odd-btn"> Apply odd Rows </button>
+        <button class="btn btn-gray" id="apply-even-btn"> Apply even Rows </button>
+        <button class="btn btn-yellow" id="hide-table-btn"> Hide Table </button>
+        <button class="btn btn-green" id="show-table-btn"> Show Table </button>
+    </div>
+</div>      
+    
+</div>
+
+<script src = "script.js"></script>
+
+</body>
+</html>
+
+
+
+
+    

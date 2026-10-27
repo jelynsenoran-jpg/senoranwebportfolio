@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Student Card | Laboratory Activity 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <img id="studentImage" src="cats.jpeg" alt="Student">
+        <h1 id="studentName">Meow</h1>
+        <p id="course">BSIT</p>
+
+        <input type="text" id="nameInput" placeholder="Type your nickname">
+
+        <select id="yearSelect">
+            <option value="">Select Year</option>
+            <option>1st Year</option>
+            <option>2nd Year</option>
+            <option>3rd Year</option>
+            <option>4th Year</option>
+        </select>
+
+        <div class="buttons">
+            <button id="clickBtn">Click</button>
+            <button id="dblClickBtn">Double Click</button>
+            <button id="pressBtn">Press & Hold</button>
+        </div>
+
+        <p id="status">Waiting for interaction...</p>
+    </div>
+
+    
+    <a href="../index.html" class="back-portfolio-btn">
+        ⬅ Go back to Portfolio
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
